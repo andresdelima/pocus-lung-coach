@@ -317,3 +317,8 @@ What was lacking: the report showed only one student session. The four student s
 > In the justification, explain that an average clip review takes 2 minutes, but usually users (trainees) will take multiple clips on every patient. Clips are taken on the lungs (multiple areas on both sides). Ultrasound is also used to evaluate the airways, the heart, the abdominal organs, major blood vessels in the patients torso. So in general, explain that this is an abbreviated proof of concept focused on the lungs, but has the possibility to be largely extrapolated to other organ systems. This growth in application would also translate into a large need (more time saved and greater opportunities for trainees)
 
 What was lacking: the justification counted single clips, not patients, and didn't show how far the idea extends. Added: one lung exam is about 6 clips (both sides), so about 12 minutes of expert review per patient; POCUS also covers the airway, heart, abdomen and torso vessels; the pipeline is organ-agnostic, so the time saved and the practice opened up grow with each organ system added.
+
+> these are the final instructions: … put your github repo url in the report so we can clone it … HTML of slides … Nothing else … if your repo is private, please mention this … add GitHub user zlisto
+> Make sure we are compliant with all of these
+
+What was lacking: the slides showed the repo address without https:// and neither file had a clone command. Both files now show the full public repo URL, the `git clone` command and that the repo is public, at the top and on the last page or slide.
