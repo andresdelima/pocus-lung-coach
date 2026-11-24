@@ -1,0 +1,23 @@
+# Python 3.12. Install from the Final Project folder: pip install -r requirements.txt
+# --- AI agents ---
+openai>=1.50
+pydantic-ai-slim[openai]==2.63.0
+pydantic>=2
+python-dotenv>=1.0.1
+tiktoken>=0.8
+# --- Web app ---
+fastapi>=0.115
+uvicorn[standard]>=0.30
+jinja2>=3.1
+python-multipart>=0.0.9
+# --- Security ---
+argon2-cffi>=23.1
+cryptography>=43
+# --- Image / clip handling and de-identification ---
+pillow>=10
+numpy>=1.26
+opencv-python-headless>=4.10
+pydicom>=3.0
+# --- Tests ---
+pytest>=8
+httpx>=0.27

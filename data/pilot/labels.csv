@@ -1,0 +1,11 @@
+file,target_view,true_view,region,probe,head_side,structures_missing,author_subscores,author_grade,notes
+1.mov,anterior_pleura_longitudinal,,anterior,linear,right,,2/2/2/2/2,10,"Author: 01 bat sign, all landmarks, plain sum 10/10"
+2.mov,posterolateral_plaps,,lateral,phased_array,right,,2/2/2/2/2,10,"Author: 04 PLAPS, all landmarks, plain sum 10/10"
+3.mov,anterior_pleura_longitudinal,,anterior,linear,right,,2/2/1/2/2,9,"Author: anterior chest (01), plain sum 9/10; depth 1"
+test_lung/L01.mov,intercostal_aeration,,lateral,curvilinear,,,2/2/2/2/2,10,"Author grade, test lung set"
+test_lung/L02.mov,mmode_pleura,,anterior,,,,2/2/2/2/2,10,"Author grade, test lung set"
+test_lung/L03.mov,anterior_pleura_longitudinal,,anterior,linear,,,1/1/1/2/2,7,"Author grade, test lung set"
+test_lung/L04.mov,mmode_pleura,,anterior,,,,2/2/2/2/2,10,"Author grade, test lung set"
+test_lung/L05.mov,anterior_pleura_longitudinal,,anterior,,,,2/1/1/2/2,8,"Author grade, test lung set"
+test_lung/L06.mov,anterior_pleura_longitudinal,,anterior,,,,1/1/1/2/2,7,"Author grade, test lung set"
+test_lung/L07.mov,posterolateral_plaps,,lateral,phased_array,,,2/2/1/2/2,9,"Author grade, test lung set"

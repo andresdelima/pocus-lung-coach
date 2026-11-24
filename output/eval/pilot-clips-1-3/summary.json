@@ -1,0 +1,78 @@
+{
+  "files": 2,
+  "checks": 4,
+  "failed_checks": 0,
+  "repeats_per_file": 2,
+  "view_accuracy": 1,
+  "router_accuracy": 1,
+  "wrong_view_images": 0,
+  "false_wrong_view_rate": 0,
+  "structures": {
+    "checked": 8,
+    "agreement": 0.625,
+    "sensitivity": 0.625,
+    "specificity": null,
+    "true_pos": 5,
+    "true_neg": 0,
+    "false_pos": 0,
+    "false_neg": 3
+  },
+  "grade": {
+    "mae": 3.5,
+    "bias": -3.5,
+    "within_1": 0.25,
+    "within_2": 0.25,
+    "band_agreement": 0.25,
+    "spearman": -0.6000000000000001
+  },
+  "consistency": {
+    "same_grade_share": 0.5,
+    "mean_spread": 2
+  },
+  "criteria": {
+    "landmarks": {
+      "exact_agreement": 0.25,
+      "bias": -0.75,
+      "n": 4
+    },
+    "orientation": {
+      "exact_agreement": 0.25,
+      "bias": -0.75,
+      "n": 4
+    },
+    "depth": {
+      "exact_agreement": 0.25,
+      "bias": -0.25,
+      "n": 4
+    },
+    "gain_focus": {
+      "exact_agreement": 0.25,
+      "bias": -0.75,
+      "n": 4
+    },
+    "interpretability": {
+      "exact_agreement": 0,
+      "bias": -1,
+      "n": 4
+    }
+  },
+  "per_view": {
+    "anterior_pleura_longitudinal": {
+      "n": 4,
+      "view_accuracy": 1,
+      "grade_mae": 3.5
+    }
+  },
+  "cost": {
+    "total_usd": 0.00404,
+    "per_check_usd": 0.00101,
+    "input_tokens": 79321,
+    "cached_input_tokens": 57164,
+    "cached_share": 0.721,
+    "output_tokens": 2509,
+    "latency_mean_s": 26.67,
+    "latency_p95_s": 32.67
+  },
+  "model": "gpt-6-luna",
+  "provider": "openai"
+}

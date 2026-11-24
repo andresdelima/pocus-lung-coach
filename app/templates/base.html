@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ user.csrf_token if user else '' }}">
+  <meta name="idle-minutes" content="{{ idle_minutes or 15 }}">
+  <title>{% block title %}{{ app_name }}{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/app.css?v={{ v }}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+{% if user %}
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">◉</span> {{ app_name }}</div>
+  <nav class="nav">
+    <a href="/dashboard" class="{% block nav_scan %}{% endblock %}">Scan</a>
+    <a href="/history" class="{% block nav_history %}{% endblock %}">My sessions</a>
+  </nav>
+  <div class="who">
+    <span class="secure-pill" title="Encrypted storage, de-identified images, audited access">🔒 PHI-protected session</span>
+    <span class="idle" id="idle-timer" title="You will be signed out after inactivity"></span>
+    <span class="user">{{ user.display_name }} · <em>{{ user.role }}</em></span>
+    <form method="post" action="/logout" class="inline">
+      <input type="hidden" name="csrf" value="{{ user.csrf_token }}">
+      <button class="btn ghost small" type="submit">Sign out</button>
+    </form>
+  </div>
+</header>
+{% endif %}
+<main>{% block content %}{% endblock %}</main>
+<footer class="foot">Educational use only. Not for diagnosis or patient care decisions.</footer>
+<script src="/static/js/common.js?v={{ v }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

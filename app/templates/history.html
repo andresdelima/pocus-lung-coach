@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block nav_history %}active{% endblock %}
+{% block content %}
+<section class="history">
+  <h1>{{ 'All learner sessions' if user.role != 'learner' else 'My scan sessions' }}</h1>
+  <p class="muted">Scans are stored encrypted and deleted automatically after {{ retention_days }} days.
+    Patient references are keyed pseudonyms; real identifiers are never stored.</p>
+  {% if scans %}
+  <table class="table">
+    <thead><tr><th>Date (UTC)</th>{% if user.role != 'learner' %}<th>Learner</th>{% endif %}<th>Target view</th>
+      <th>Type</th><th>Frames</th><th>Patient ref</th><th>Coach checks</th><th>Best grade</th><th></th></tr></thead>
+    <tbody>
+    {% for s in scans %}
+      <tr data-scan="{{ s.id }}">
+        <td>{{ s.created_at }}</td>{% if user.role != 'learner' %}<td>{{ s.display_name }}</td>{% endif %}
+        <td>{{ s.view_name }}</td><td>{{ s.kind }}</td><td>{{ s.frame_count }}</td>
+        <td><code>{{ s.patient_ref or '—' }}</code></td><td>{{ s.n_feedback }}</td>
+        <td>{{ s.best if s.best is not none else '—' }}</td>
+        <td class="row-actions"><a class="btn ghost small" href="/dashboard#scan={{ s.id }}">Open</a>
+          <button class="btn danger small js-delete" data-scan="{{ s.id }}">Delete</button></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>No scans yet. <a href="/dashboard">Start a scan</a>.</p>
+  {% endif %}
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/history.js?v={{ v }}"></script>{% endblock %}

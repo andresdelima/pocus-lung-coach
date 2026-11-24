@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block body_class %}login-page{% endblock %}
+{% block content %}
+<section class="login-card">
+  <div class="login-brand"><span class="brand-mark big">◉</span>
+    <h1>{{ app_name }}</h1>
+    <p class="muted">AI coaching for lung ultrasound: acquisition, optimization and interpretation.</p>
+  </div>
+  {% if msg %}<div class="alert">{{ msg }}</div>{% endif %}
+  <form method="post" action="/login" autocomplete="off" class="login-form">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <label>Username <input name="username" required maxlength="64" autocomplete="username" autofocus></label>
+    <label>Password <input name="password" type="password" required maxlength="256" autocomplete="current-password"></label>
+    <button class="btn primary" type="submit">Sign in</button>
+  </form>
+  <ul class="login-notes">
+    <li>Passwords are stored only as salted Argon2id hashes.</li>
+    <li>Accounts lock for 15 minutes after 5 failed attempts.</li>
+    <li>Sessions end after 15 minutes of inactivity.</li>
+    <li>All access is recorded in a tamper-evident audit log.</li>
+  </ul>
+</section>
+{% endblock %}

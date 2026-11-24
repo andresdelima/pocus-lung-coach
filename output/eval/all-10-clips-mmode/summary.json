@@ -1,0 +1,93 @@
+{
+  "files": 10,
+  "checks": 20,
+  "failed_checks": 0,
+  "repeats_per_file": 2,
+  "view_accuracy": 1,
+  "router_accuracy": 1,
+  "wrong_view_images": 0,
+  "false_wrong_view_rate": 0,
+  "structures": {
+    "checked": 52,
+    "agreement": 0.8461538461538461,
+    "sensitivity": 0.8461538461538461,
+    "specificity": null,
+    "true_pos": 44,
+    "true_neg": 0,
+    "false_pos": 0,
+    "false_neg": 8
+  },
+  "grade": {
+    "mae": 1.55,
+    "bias": -1.25,
+    "within_1": 0.6,
+    "within_2": 0.85,
+    "band_agreement": 0.5,
+    "spearman": 0.4030075187969925
+  },
+  "consistency": {
+    "same_grade_share": 0.3,
+    "mean_spread": 1.3
+  },
+  "criteria": {
+    "landmarks": {
+      "exact_agreement": 0.7,
+      "bias": -0.2,
+      "n": 20
+    },
+    "orientation": {
+      "exact_agreement": 0.7894736842105263,
+      "bias": -0.21052631578947367,
+      "n": 19
+    },
+    "depth": {
+      "exact_agreement": 0.42105263157894735,
+      "bias": 0.3684210526315789,
+      "n": 19
+    },
+    "gain_focus": {
+      "exact_agreement": 0.47368421052631576,
+      "bias": -0.5263157894736842,
+      "n": 19
+    },
+    "interpretability": {
+      "exact_agreement": 0.5263157894736842,
+      "bias": -0.47368421052631576,
+      "n": 19
+    }
+  },
+  "per_view": {
+    "anterior_pleura_longitudinal": {
+      "n": 10,
+      "view_accuracy": 1,
+      "grade_mae": 1.7
+    },
+    "intercostal_aeration": {
+      "n": 2,
+      "view_accuracy": 1,
+      "grade_mae": 2.5
+    },
+    "mmode_pleura": {
+      "n": 4,
+      "view_accuracy": 1,
+      "grade_mae": 2
+    },
+    "posterolateral_plaps": {
+      "n": 4,
+      "view_accuracy": 1,
+      "grade_mae": 0.25
+    }
+  },
+  "cost": {
+    "total_usd": 0.01692,
+    "per_check_usd": 0.000846,
+    "input_tokens": 376174,
+    "cached_input_tokens": 309140,
+    "cached_share": 0.822,
+    "output_tokens": 14247,
+    "latency_mean_s": 17.65,
+    "latency_p95_s": 41.19
+  },
+  "model": "gpt-6-luna",
+  "provider": "openai"
+}

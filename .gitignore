@@ -1,0 +1,40 @@
+# ---- Secrets: never commit the real .env (only .env.example) ----
+.env
+.env.*
+!.env.example
+
+# ---- Python ----
+.venv
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# ---- Temporary files from the JSON log writer ----
+*.json.tmp
+
+# ---- OS / editor / local tooling ----
+.DS_Store
+.vscode/
+.idea/
+.claude/
+.report_draft/
+*.zip
+
+# ---- Source material: copyrighted literature stays local; view cards are committed ----
+knowledge/literature/*
+!knowledge/literature/.gitkeep
+knowledge/notes/
+
+# ---- Runtime data: database, encryption key, uploads, TLS cert (never commit) ----
+instance/
+
+# ---- Pilot images stay local (de-identified, but clinical); the label sheet and results are committed ----
+data/pilot/images/*
+!data/pilot/images/.gitkeep
+
+# ---- Author's raw ultrasound files stay local ----
+Ultrasound images/
+
+# ---- Student scans used in pilot testing stay local ----
+Student images/

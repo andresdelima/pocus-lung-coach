@@ -1,0 +1,83 @@
+{
+  "files": 3,
+  "checks": 6,
+  "failed_checks": 0,
+  "repeats_per_file": 2,
+  "view_accuracy": 0.8333333333333334,
+  "router_accuracy": 0.8333333333333334,
+  "wrong_view_images": 0,
+  "false_wrong_view_rate": 0,
+  "structures": {
+    "checked": 18,
+    "agreement": 0.8888888888888888,
+    "sensitivity": 0.8888888888888888,
+    "specificity": null,
+    "true_pos": 16,
+    "true_neg": 0,
+    "false_pos": 0,
+    "false_neg": 2
+  },
+  "grade": {
+    "mae": 1,
+    "bias": -0.3333333333333333,
+    "within_1": 0.8333333333333334,
+    "within_2": 0.8333333333333334,
+    "band_agreement": 0.8333333333333334,
+    "spearman": -0.4285714285714286
+  },
+  "consistency": {
+    "same_grade_share": 0.6666666666666666,
+    "mean_spread": 0.6666666666666666
+  },
+  "criteria": {
+    "landmarks": {
+      "exact_agreement": 0.8333333333333334,
+      "bias": -0.16666666666666666,
+      "n": 6
+    },
+    "orientation": {
+      "exact_agreement": 0.6666666666666666,
+      "bias": -0.3333333333333333,
+      "n": 6
+    },
+    "depth": {
+      "exact_agreement": 0.6666666666666666,
+      "bias": 0.3333333333333333,
+      "n": 6
+    },
+    "gain_focus": {
+      "exact_agreement": 1,
+      "bias": 0,
+      "n": 6
+    },
+    "interpretability": {
+      "exact_agreement": 0.8333333333333334,
+      "bias": -0.16666666666666666,
+      "n": 6
+    }
+  },
+  "per_view": {
+    "anterior_pleura_longitudinal": {
+      "n": 4,
+      "view_accuracy": 0.75,
+      "grade_mae": 1.5
+    },
+    "posterolateral_plaps": {
+      "n": 2,
+      "view_accuracy": 1,
+      "grade_mae": 0
+    }
+  },
+  "cost": {
+    "total_usd": 0.00931,
+    "per_check_usd": 0.001551,
+    "input_tokens": 118286,
+    "cached_input_tokens": 50052,
+    "cached_share": 0.423,
+    "output_tokens": 3970,
+    "latency_mean_s": 24.47,
+    "latency_p95_s": 31.96
+  },
+  "model": "gpt-6-luna",
+  "provider": "openai"
+}

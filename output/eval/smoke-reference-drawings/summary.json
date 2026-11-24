@@ -1,0 +1,91 @@
+{
+  "files": 10,
+  "checks": 20,
+  "failed_checks": 0,
+  "repeats_per_file": 2,
+  "view_accuracy": 0.9,
+  "wrong_view_images": 2,
+  "wrong_view_flag_rate": 1,
+  "false_wrong_view_rate": 0,
+  "structures": {
+    "checked": 60,
+    "agreement": 0.9,
+    "sensitivity": 0.8846153846153846,
+    "specificity": 1.0,
+    "true_pos": 46,
+    "true_neg": 8,
+    "false_pos": 0,
+    "false_neg": 6
+  },
+  "grade": {
+    "mae": 1.6,
+    "bias": -1.6,
+    "within_1": 0.7,
+    "within_2": 0.8,
+    "band_agreement": 0.7,
+    "spearman": 0.3578947368421052
+  },
+  "consistency": {
+    "same_grade_share": 0.8,
+    "mean_spread": 0.2
+  },
+  "per_view": {
+    "airway_hyoid_epiglottis": {
+      "n": 2,
+      "view_accuracy": 1,
+      "grade_mae": 0
+    },
+    "airway_longitudinal_ctm": {
+      "n": 4,
+      "view_accuracy": 0.5,
+      "grade_mae": 0
+    },
+    "airway_suprasternal_ett": {
+      "n": 2,
+      "view_accuracy": 1,
+      "grade_mae": 0
+    },
+    "airway_transverse_ctm_doppler": {
+      "n": 2,
+      "view_accuracy": 1,
+      "grade_mae": 1
+    },
+    "airway_vocal_cords": {
+      "n": 2,
+      "view_accuracy": 1,
+      "grade_mae": 7
+    },
+    "anterior_pleura_longitudinal": {
+      "n": 2,
+      "view_accuracy": 1,
+      "grade_mae": 2
+    },
+    "intercostal_aeration": {
+      "n": 2,
+      "view_accuracy": 1,
+      "grade_mae": 0
+    },
+    "mmode_pleura": {
+      "n": 2,
+      "view_accuracy": 1,
+      "grade_mae": 0.5
+    },
+    "posterolateral_plaps": {
+      "n": 2,
+      "view_accuracy": 1,
+      "grade_mae": 5.5
+    }
+  },
+  "cost": {
+    "total_usd": 0.01001,
+    "per_check_usd": 0.000501,
+    "input_tokens": 251414,
+    "cached_input_tokens": 223440,
+    "cached_share": 0.889,
+    "output_tokens": 9968,
+    "latency_mean_s": 4.65,
+    "latency_p95_s": 6.01
+  },
+  "model": "gpt-6-luna",
+  "provider": "openai"
+}
