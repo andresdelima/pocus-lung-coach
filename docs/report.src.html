@@ -50,7 +50,9 @@
 <h2>1. Motivation</h2>
 <p><b>Who has the problem.</b> Clinicians learning point-of-care ultrasound (POCUS): residents, ICU and emergency trainees, and nurses. Lung ultrasound is a hands-on skill. The hard part is acquiring a good image: probe position, plane, depth and gain. Reading it comes after that. Trainees improve by scanning many times and getting feedback on each attempt.</p>
 <p><b>How it is handled today.</b> In my practice as a POCUS instructor, feedback happens <b>at the bedside, only when an expert is physically present</b>. A good review takes about <b>2 minutes of expert time per clip</b> (author estimate, from my own teaching). When no expert is around, nights, weekends or busy shifts, trainees scan with no feedback at all, or save clips that nobody reviews.</p>
-<p><b>What that costs.</b> Expert time is the bottleneck. A program with 20 trainees who each record 20 practice clips a month generates 400 clips, or about <b>13 hours of expert review a month</b> at 2 minutes per clip. Most of those clips never get reviewed. Trainees repeat the same acquisition errors (a rib shadow in the way, the pleura too deep, a curvilinear probe at linear depth) because nobody points them out.</p>
+<p><b>One patient is many clips.</b> Trainees rarely record a single clip. A lung exam alone covers several areas on <b>both sides of the chest</b>: the 6-point exam this project uses has three points per side (anterior, lateral and posterolateral), so one patient means about <b>6 clips, or about 12 minutes of expert review</b> at 2 minutes each, and more when a clip has to be repeated.</p>
+<p><b>What that costs.</b> Expert time is the bottleneck. A program with 20 trainees who each record 20 practice clips a month, only about three lung exams each, generates 400 clips, or about <b>13 hours of expert review a month</b>. Most of those clips never get reviewed. Trainees repeat the same acquisition errors (a rib shadow in the way, the pleura too deep, a curvilinear probe at linear depth) because nobody points them out.</p>
+<p><b>The lungs are only the start.</b> At the bedside, ultrasound is also used to evaluate the <b>airway, the heart, the abdominal organs and the major blood vessels of the torso</b>. Each of those exams has its own set of views, and each view is another clip to review. A trainee learning the full range of POCUS therefore produces many times the clips of a lung exam alone, and the expert time needed to give feedback grows at the same rate. This project is an <b>abbreviated proof of concept focused on the lungs</b>, but nothing in its design is specific to the lungs: the agents read whatever view cards and reference images they are given. Adding an organ system means writing its view cards, drawing its reference images and calibrating against an expert, as was done here. The airway cards were already built and are saved for phase 2. As the coach extends to more organ systems, both the expert time it can save and the practice it opens up for trainees grow with it.</p>
 
 <h2>2. What is new here</h2>
 <table>
@@ -60,8 +62,8 @@
 <tr><td>ChatGPT or any chat model with an uploaded image</td><td>Will describe an ultrasound image if asked</td><td>No rubric, no view-specific checklist, no citations. It may diagnose, and it can be steered by text in the image (we tested this, Section 5).</td></tr>
 </table>
 <p><b>What is different.</b> (1) It is <b>device-agnostic</b>: it works on any recorded clip, DICOM file or screen recording, from any machine. (2) It coaches <b>acquisition, not diagnosis</b>, against <b>four expert-reviewed view cards</b>, and every teaching point carries a citation to the literature. (3) The <b>grade is computed in code</b> from five 0–2 sub-scores defined by an expert rubric, so it is consistent and explainable. (4) The scores were <b>calibrated against an expert's grades</b> on real clips (Section 6). (5) It costs about <b>$0.001 per check</b>. (6) Uploads are de-identified and encrypted, because clinical images can carry patient details.</p>
-<p><b>Why it matters.</b> It turns every unsupervised practice scan into a scored, explained attempt. It also helps the expert target their 2 minutes: the coach handles the routine feedback, and the expert reviews what the coach grades low or stops.</p>
-<p class="note"><b>Honest scope:</b> this is an educational proof of concept for lung ultrasound only (anterior and lateral chest). It is not real-time, not FDA-cleared and not for patient care. Airway ultrasound was built and then deliberately moved to a phase-2 project to meet the deadline.</p>
+<p><b>Why it matters.</b> It turns every unsupervised practice scan into a scored, explained attempt. It also helps the expert target their 2 minutes per clip: the coach handles the routine feedback, and the expert reviews what the coach grades low or stops. The same pipeline can carry this to every organ system a trainee learns, which is where most of the expert time goes.</p>
+<p class="note"><b>Honest scope:</b> this is an abbreviated, educational proof of concept for lung ultrasound only (anterior and lateral chest). It is not real-time, not FDA-cleared and not for patient care. Airway ultrasound was built and then deliberately moved to a phase-2 project to meet the deadline; the heart, abdomen and vessels would follow the same path.</p>
 
 <!-- ===================================================================== -->
 <h2>3. The agents</h2>
@@ -211,6 +213,7 @@
 <tr><td>When feedback is available</td><td>Only when an expert is present</td><td>Any time, on any recorded clip</td><td>Author practice; app</td></tr>
 <tr><td>Time to feedback</td><td>Minutes, at the bedside; otherwise never</td><td>5–9 s per check</td><td>Portal logs (student clips)</td></tr>
 <tr><td>Expert time per clip</td><td>About 2 min</td><td>0 min for routine checks; expert reviews low grades and stops</td><td>Author estimate</td></tr>
+<tr><td>One patient's lung exam (6 clips, both sides)</td><td>About 12 min of expert time</td><td>6 checks: about $0.006 and 30–55 s of waiting</td><td>Author estimate; portal logs</td></tr>
 <tr><td>Cost per clip</td><td>About 2 min of clinician time</td><td>$0.001 of model cost</td><td>Usage log</td></tr>
 <tr><td>Program with 20 trainees × 20 clips a month</td><td>About 13 h of expert review a month (mostly not done)</td><td>About $1.20 a month (1,200 checks); expert time goes to the clips that need it</td><td>Arithmetic on the rows above</td></tr>
 <tr><td>Agreement with the expert</td><td>n/a</td><td>Within ±2 points on 80% of checks</td><td>Pilot evaluation, 10 clips × 2</td></tr>
@@ -233,7 +236,7 @@
 <li><b>Consistency:</b> run the Grader 3 times and report the median plus a confidence band, and use the spread as an "unsure" signal that sends the clip to an expert.</li>
 <li><b>Bigger, harder test set:</b> 100+ clips across the whole grade range, graded by two or three experts, to measure agreement between experts and between the coach and experts.</li>
 <li><b>Instructor view:</b> a queue of clips the coach graded low or stopped, plus each trainee's grade over time.</li>
-<li><b>Phase 2:</b> bring back the archived airway cards (CTM, tube confirmation, vocal cords) with the same calibration process.</li>
+<li><b>Phase 2 and beyond:</b> bring back the archived airway cards (CTM, tube confirmation, vocal cords) with the same calibration process, then add the heart, the abdominal organs and the major torso vessels, each as a new set of view cards on the same pipeline.</li>
 <li><b>Live mode:</b> a capture-card input so feedback arrives during the scan.</li>
 </ol>
 
